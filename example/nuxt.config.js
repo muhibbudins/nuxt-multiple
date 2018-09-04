@@ -22,7 +22,8 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', type: 'text/css', href: '//cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css' }
+      { rel: 'stylesheet', type: 'text/css', href: '//cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css' },
+      { rel: 'stylesheet', type: 'text/css', href: '//fonts.googleapis.com/css?family=Open+Sans:300|500' }
     ]
   },
   /*
@@ -35,6 +36,7 @@ module.exports = {
   ** Global CSS
   */
   css: [
+    'element-ui/lib/theme-chalk/index.css',
     { src: '../../assets/scss/style.scss', lang: 'scss' }
   ],
   /*

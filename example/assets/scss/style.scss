@@ -1,24 +1,31 @@
 /**
  * Write your SCSS code here
  */
- .el-header,
- .el-footer {
-  background-color: #B3C0D1;
-  color: #333;
-  text-align: center;
-  line-height: 60px;
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
 }
+.main {
+  margin-top: 15%;
+}
+.main-content {
+  background-color: #FAFAFA;
 
+  .main {
+    margin-top: 10%;
+  }
+}
 .el-aside {
-  background-color: #D3DCE6;
-  color: #333;
-  text-align: center;
-  line-height: 200px;
+  height: 100vh;
 }
+.title {
+  font-size: 3rem;
+  font-weight: 300;
+  margin: 1rem 0;
 
-.el-main {
-  background-color: #E9EEF3;
-  color: #333;
-  text-align: center;
-  line-height: 160px;
+  &-small {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
 }

@@ -1,12 +1,14 @@
 <template>
-  <section class="main text-center">
+  <section class="main" align="center">
     <app-logo/>
-    <h1 class="title">
+    <div class="title">
       Blog
-    </h1>
-    <h2 class="subtitle">
+    </div>
+    <div class="title-small">
       A Nuxt.js project — <span v-html="message"></span>
-    </h2>
+    </div>
+    <el-button type="primary">Administrator Page</el-button>
+    <el-button>Github</el-button>
   </section>
 </template>
 
