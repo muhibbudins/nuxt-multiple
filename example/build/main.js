@@ -88,7 +88,6 @@ module.exports = require("body-parser");
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_express__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_express___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_express__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__hello__ = __webpack_require__(7);
@@ -109,7 +108,7 @@ const router = Object(__WEBPACK_IMPORTED_MODULE_0_express__["Router"])();
  */
 router.use(__WEBPACK_IMPORTED_MODULE_1__hello__["a" /* default */]);
 
-/* harmony default export */ __webpack_exports__["default"] = (router);
+/* harmony default export */ __webpack_exports__["a"] = (router);
 
 /***/ }),
 /* 4 */
@@ -141,7 +140,7 @@ module.exports = {
   /*
   ** Global Plugin
   */
-  plugins: [{ src: `${root}/plugins/vuex.js`, ssr: false }],
+  plugins: [{ src: '../../plugins/vuex.js', ssr: false }],
   /*
   ** Global Module
   */
@@ -209,15 +208,74 @@ module.exports = __webpack_require__(11);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* WEBPACK VAR INJECTION */(function(__dirname) {/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_path__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_path___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_path__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_config__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_config___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__app_config__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_express__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_express___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_express__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_nuxt__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_nuxt___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_nuxt__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_body_parser__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_body_parser___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_body_parser__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__api__ = __webpack_require__(3);
 
 
 
-__WEBPACK_IMPORTED_MODULE_1__app_config___default()('Blog', __WEBPACK_IMPORTED_MODULE_0_path___default.a.resolve(__dirname, './nuxt.config.js'), 3050);
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, "app/blog"))
+
+/**
+ * Import any Routes on API folder
+ */
+
+
+const app = __WEBPACK_IMPORTED_MODULE_0_express___default()();
+const host = process.env.HOST || '127.0.0.1';
+const port = process.env.PORT || 3050;
+
+/**
+ * Set port
+ */
+app.set('port', port);
+
+/**
+ * Use body parser for handling POST method
+ */
+app.use(__WEBPACK_IMPORTED_MODULE_2_body_parser___default.a.json());
+
+/**
+ * Use given APIs
+ */
+app.use('/api', __WEBPACK_IMPORTED_MODULE_3__api__["a" /* default */]);
+
+/**
+ * Import and use Nuxt.js configuration
+ */
+let config = __webpack_require__(13);
+config.dev = !("development" === 'production');
+
+/**
+ * Create new instance of Nuxt
+ */
+const nuxt = new __WEBPACK_IMPORTED_MODULE_1_nuxt__["Nuxt"](config);
+
+/**
+ * Set build only on development mode
+ */
+if (config.dev) {
+  const builder = new __WEBPACK_IMPORTED_MODULE_1_nuxt__["Builder"](nuxt);
+  builder.build();
+}
+
+/**
+ * Use Nuxt renderer on Express
+ */
+app.use(nuxt.render);
+
+/**
+ * Start App
+ */
+app.listen(port, host);
+
+/**
+ * Show listen port
+ */
+console.log(`App "Blog" listening on ${host}:${port}`);
 
 /***/ }),
 /* 7 */
@@ -293,12 +351,12 @@ app.use(__WEBPACK_IMPORTED_MODULE_2_body_parser___default.a.json());
 /**
  * Use given APIs
  */
-app.use('/api', __WEBPACK_IMPORTED_MODULE_3__api__["default"]);
+app.use('/api', __WEBPACK_IMPORTED_MODULE_3__api__["a" /* default */]);
 
 /**
  * Import and use Nuxt.js configuration
  */
-let config = __webpack_require__(12);
+let config = __webpack_require__(14);
 config.dev = !("development" === 'production');
 
 /**
@@ -327,102 +385,50 @@ app.listen(port, host);
 /**
  * Show listen port
  */
-console.log(`Server listening on ${host}:${port}`);
+console.log(`App "Profile" listening on ${host}:${port}`);
 
 /***/ }),
-/* 12 */
+/* 12 */,
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(__dirname) {const config = __webpack_require__(4);
 const extend = {
+  /**
+   * Define source directory
+   */
   srcDir: __dirname,
-  buildDir: '.nuxt/profile'
-};
-
-Object.assign(extend, config);
-
-module.exports = extend;
-/* WEBPACK VAR INJECTION */}.call(exports, "app/profile"))
-
-/***/ }),
-/* 13 */
-/***/ (function(module, exports, __webpack_require__) {
-
-const express = __webpack_require__(0);
-const { Nuxt, Builder } = __webpack_require__(1);
-const bodyParser = __webpack_require__(2);
-
-/**
- * const any Routes on API folder
- */
-const api = __webpack_require__(3);
-
-module.exports = (configApp, configPath, configPort) => {
-  const app = express();
-  const host = process.env.HOST || '127.0.0.1';
-  const port = process.env.PORT || configPort;
+  /**
+   * Define build target
+   */
+  buildDir: '.nuxt/blog'
 
   /**
-   * Set port
+   * Export config
    */
-  app.set('port', port);
-
-  /**
-   * Use body parser for handling POST method
-   */
-  app.use(bodyParser.json());
-
-  /**
-   * Use given APIs
-   */
-  app.use('/api', api);
-
-  /**
-   * Import and use Nuxt.js configuration
-   */
-  let config = !(function webpackMissingModule() { var e = new Error("Cannot find module \".\""); e.code = 'MODULE_NOT_FOUND'; throw e; }());
-  config.dev = !("development" === 'production');
-
-  /**
-   * Create new instance of Nuxt
-   */
-  const nuxt = new Nuxt(config);
-
-  /**
-   * Set build only on development mode
-   */
-  if (config.dev) {
-    const builder = new Builder(nuxt);
-    builder.build();
-  }
-
-  /**
-   * Use Nuxt renderer on Express
-   */
-  app.use(nuxt.render);
-
-  /**
-   * Start App
-   */
-  app.listen(port, host);
-
-  /**
-   * Show listen port
-   */
-  console.log(`Server ${configApp} listening on ${host}:${port}`);
-};
+};module.exports = Object.assign(extend, config);
+/* WEBPACK VAR INJECTION */}.call(exports, "app/blog"))
 
 /***/ }),
 /* 14 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-function webpackEmptyContext(req) {
-	throw new Error("Cannot find module '" + req + "'.");
-}
-webpackEmptyContext.keys = function() { return []; };
-webpackEmptyContext.resolve = webpackEmptyContext;
-module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 14;
+/* WEBPACK VAR INJECTION */(function(__dirname) {const config = __webpack_require__(4);
+const extend = {
+  /**
+   * Define source directory
+   */
+  srcDir: __dirname,
+  /**
+   * Define build target
+   */
+  buildDir: '.nuxt/profile'
+
+  /**
+   * Export config
+   */
+};module.exports = Object.assign(extend, config);
+/* WEBPACK VAR INJECTION */}.call(exports, "app/profile"))
 
 /***/ })
 /******/ ]);

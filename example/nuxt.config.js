@@ -41,7 +41,7 @@ module.exports = {
   ** Global Plugin
   */
   plugins: [
-    { src: `${root}/plugins/vuex.js`, ssr: false }
+    { src: '../../plugins/vuex.js', ssr: false }
   ],
   /*
   ** Global Module

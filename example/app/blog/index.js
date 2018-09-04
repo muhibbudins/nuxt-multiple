@@ -29,7 +29,7 @@ app.use('/api', api)
 /**
  * Import and use Nuxt.js configuration
  */
-let config = require('./nuxt.config.js')
+let config = require('./app.config.js')
 config.dev = !(process.env.NODE_ENV === 'production')
 
 /**
@@ -58,4 +58,4 @@ app.listen(port, host)
 /**
  * Show listen port
  */
-console.log(`Server listening on ${host}:${port}`)
+console.log(`App "Blog" listening on ${host}:${port}`)
