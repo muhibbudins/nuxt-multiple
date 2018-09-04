@@ -247,7 +247,7 @@ app.use('/api', __WEBPACK_IMPORTED_MODULE_3__api__["a" /* default */]);
 /**
  * Import and use Nuxt.js configuration
  */
-let config = __webpack_require__(13);
+let config = __webpack_require__(9);
 config.dev = !("development" === 'production');
 
 /**
@@ -307,7 +307,27 @@ router.get('/', async (req, res) => {
 module.exports = require("express/lib/router/index");
 
 /***/ }),
-/* 9 */,
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(__dirname) {const config = __webpack_require__(4);
+const extend = {
+  /**
+   * Define source directory
+   */
+  srcDir: __dirname,
+  /**
+   * Define build target
+   */
+  buildDir: '.nuxt/admin'
+
+  /**
+   * Export config
+   */
+};module.exports = Object.assign(extend, config);
+/* WEBPACK VAR INJECTION */}.call(exports, "app/blog"))
+
+/***/ }),
 /* 10 */
 /***/ (function(module, exports) {
 
@@ -357,7 +377,7 @@ app.use('/api', __WEBPACK_IMPORTED_MODULE_3__api__["a" /* default */]);
 /**
  * Import and use Nuxt.js configuration
  */
-let config = __webpack_require__(14);
+let config = __webpack_require__(12);
 config.dev = !("development" === 'production');
 
 /**
@@ -386,32 +406,10 @@ app.listen(port, host);
 /**
  * Show listen port
  */
-console.log(`App "Profile" listening on ${host}:${port}`);
+console.log(`App "Admin" listening on ${host}:${port}`);
 
 /***/ }),
-/* 12 */,
-/* 13 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(__dirname) {const config = __webpack_require__(4);
-const extend = {
-  /**
-   * Define source directory
-   */
-  srcDir: __dirname,
-  /**
-   * Define build target
-   */
-  buildDir: '.nuxt/admin'
-
-  /**
-   * Export config
-   */
-};module.exports = Object.assign(extend, config);
-/* WEBPACK VAR INJECTION */}.call(exports, "app/blog"))
-
-/***/ }),
-/* 14 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(__dirname) {const config = __webpack_require__(4);
@@ -429,7 +427,7 @@ const extend = {
    * Export config
    */
 };module.exports = Object.assign(extend, config);
-/* WEBPACK VAR INJECTION */}.call(exports, "app/profile"))
+/* WEBPACK VAR INJECTION */}.call(exports, "app/admin"))
 
 /***/ })
 /******/ ]);

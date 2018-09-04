@@ -1,5 +1,5 @@
 <template>
-  <b-container class="main text-center">
+  <section class="main text-center">
     <app-logo/>
     <h1 class="title">
       Blog
@@ -7,11 +7,7 @@
     <h2 class="subtitle">
       A Nuxt.js project — <span v-html="message"></span>
     </h2>
-    <div class="links">
-      <b-link class="btn btn-success" href="https://nuxtjs.org/">Documentation</b-link>
-      <b-link href="https://github.com/nuxt/nuxt.js">GitHub</b-link>
-    </div>
-  </b-container>
+  </section>
 </template>
 
 <script>
