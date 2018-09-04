@@ -1,5 +1,5 @@
 {
-  "name": "{{ name }}",
+  "name": "nuxt-multiple-app",
   "version": "1.0.0",
   "description": "{{ description }}",
   "author": "{{ author }}",

@@ -2,7 +2,7 @@ import createPersistedState from 'vuex-persistedstate'
 
 export default ({store}) => {
   createPersistedState({
-    key: '{{ name }}',
+    key: 'nuxt-multiple-app',
     paths: ['message']
   })(store)
 }

@@ -1,4 +1,4 @@
-# {{ name }}
+# nuxt-multiple-app
 
 > {{ description }}
 
