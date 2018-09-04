@@ -13,7 +13,7 @@ Make sure to have `node 8.0+` and `npm 5.0+` installed
 This is a project template for [vue-cli](https://github.com/vuejs/vue-cli).
 
 ``` bash
-$ vue init muhibbudins/nuxt-template my-project  
+$ vue init muhibbudins/nuxt-multiple my-project  
 $ cd my-project
 
 # install dependencies
@@ -28,7 +28,7 @@ $ npm install # Or yarn install
 
 ``` bash
 # serve with hot reloading at localhost:3000
-$ npm run dev
+$ npm run dev # Or yarn dev
 ```
 
 Go to [http://localhost:3000](http://localhost:3000)
@@ -41,20 +41,12 @@ $ npm run build
 $ npm start
 ```
 
-### Generate
-
-``` bash
-# generate a static project
-$ npm run generate
-```
-
 ## Feature
 
 This template already include with :
 
 - Express Backpack
-- Bootstrap Vue
+- Element UI
 - Axios & Example APIs
 - SASS / SCSS Loader
-- Vuex Store & Persisted State
-- Set Port on Install
+- Vuex Store
