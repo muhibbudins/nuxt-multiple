@@ -2,7 +2,7 @@
   <el-container>
     <el-aside width="200px">
       <el-menu
-        default-active="2"
+        default-active="0"
         class="el-aside"
         background-color="#545c64"
         text-color="#fff"

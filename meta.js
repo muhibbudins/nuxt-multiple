@@ -2,6 +2,9 @@ module.exports = {
   helpers: {
     escape: function(value) {
       return value.replace(/'/g, '&apos;');
+    },
+    slugify: function(string) {
+      return string.toLowerCase().replace(/ /g, '-')
     }
   },
   prompts: {
@@ -19,11 +22,12 @@ module.exports = {
     author: {
       'type': 'string',
       'message': 'Author :'
-    },
-    port: {
-      'type': 'number',
-      'message': 'Listening on Port :'
-    },
+    }
   },
-  completeMessage: '{{#inPlace}}To get started:\n\n  npm install # Or yarn\n  npm run dev{{else}}To get started:\n\n  cd {{destDirName}}\n  npm install # Or yarn\n  npm run dev{{/inPlace}}'
+  completeMessage: ''+
+    '{{#inPlace}}' + 
+      'To get started:\n\n  npm install # Or yarn\n  npm run dev' +
+    '{{else}}' +
+      'To get started:\n\n  cd {{destDirName}}\n  npm install # Or yarn\n  npm run dev' +
+    '{{/inPlace}}'
 };
