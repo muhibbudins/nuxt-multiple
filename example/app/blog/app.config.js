@@ -7,7 +7,7 @@ const extend = {
   /**
    * Define build target
    */
-  buildDir: '.nuxt/blog'
+  buildDir: '.nuxt/admin'
 }
 
 /**

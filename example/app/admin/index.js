@@ -58,4 +58,4 @@ app.listen(port, host)
 /**
  * Show listen port
  */
-console.log(`App "Profile" listening on ${host}:${port}`)
+console.log(`App "Admin" listening on ${host}:${port}`)

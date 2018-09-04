@@ -1,32 +1,24 @@
 /**
  * Write your SCSS code here
  */
-.main {
-  margin-top: 100px;
+ .el-header,
+ .el-footer {
+  background-color: #B3C0D1;
+  color: #333;
+  text-align: center;
+  line-height: 60px;
 }
 
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 48px;
-  color: #35495e;
-  letter-spacing: 1px;
-  margin-top: 1rem;
+.el-aside {
+  background-color: #D3DCE6;
+  color: #333;
+  text-align: center;
+  line-height: 200px;
 }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 24px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-
-  a {
-    margin: 0 10px;
-  }
+.el-main {
+  background-color: #E9EEF3;
+  color: #333;
+  text-align: center;
+  line-height: 160px;
 }

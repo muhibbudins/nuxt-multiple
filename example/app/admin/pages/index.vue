@@ -2,7 +2,7 @@
   <b-container class="main text-center">
     <app-logo/>
     <h1 class="title">
-      Profile
+      Admin
     </h1>
     <h2 class="subtitle">
       A Nuxt.js project — <span v-html="message"></span>

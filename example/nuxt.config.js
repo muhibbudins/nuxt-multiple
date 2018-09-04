@@ -1,5 +1,4 @@
 const path = require('path')
-const root = '../..'
 const shared = [
   'assets',
   'components',
@@ -35,19 +34,19 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    { src: `${root}/assets/scss/style.scss`, lang: 'scss' }
+    { src: '../../assets/scss/style.scss', lang: 'scss' }
   ],
   /*
   ** Global Plugin
   */
   plugins: [
-    { src: '../../plugins/vuex.js', ssr: false }
+    '../../plugins/element.js'
   ],
   /*
   ** Global Module
   */
   modules: [
-    'bootstrap-vue/nuxt'
+    // do stuff
   ],
   /*
   ** Build configuration

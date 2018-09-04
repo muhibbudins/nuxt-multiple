@@ -115,7 +115,6 @@ router.use(__WEBPACK_IMPORTED_MODULE_1__hello__["a" /* default */]);
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(__dirname) {const path = __webpack_require__(10);
-const root = '../..';
 const shared = ['assets', 'components', 'layout', 'middleware', 'plugins', 'static', 'store'];
 
 module.exports = {
@@ -136,15 +135,17 @@ module.exports = {
   /*
   ** Global CSS
   */
-  css: [{ src: `${root}/assets/scss/style.scss`, lang: 'scss' }],
+  css: [{ src: '../../assets/scss/style.scss', lang: 'scss' }],
   /*
   ** Global Plugin
   */
-  plugins: [{ src: '../../plugins/vuex.js', ssr: false }],
+  plugins: ['../../plugins/element.js'],
   /*
   ** Global Module
   */
-  modules: ['bootstrap-vue/nuxt'],
+  modules: [
+    // do stuff
+  ],
   /*
   ** Build configuration
   */
@@ -401,7 +402,7 @@ const extend = {
   /**
    * Define build target
    */
-  buildDir: '.nuxt/blog'
+  buildDir: '.nuxt/admin'
 
   /**
    * Export config
