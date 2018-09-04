@@ -247,6 +247,8 @@ module.exports = require("path");
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(__dirname) {const path = __webpack_require__(10);
+const root = '../..';
+const shared = ['assets', 'components', 'layout', 'middleware', 'plugins', 'static', 'store'];
 
 module.exports = {
   /*
@@ -266,11 +268,11 @@ module.exports = {
   /*
   ** Global CSS
   */
-  css: [{ src: '../../assets/scss/style.scss', lang: 'scss' }],
+  css: [{ src: `${root}/assets/scss/style.scss`, lang: 'scss' }],
   /*
   ** Global Plugin
   */
-  plugins: [{ src: '../../plugins/vuex.js', ssr: false }],
+  plugins: [{ src: `${root}/plugins/vuex.js`, ssr: false }],
   /*
   ** Global Module
   */
@@ -284,8 +286,9 @@ module.exports = {
     ** Run ESLint on save
     */
     extend(config, ctx) {
-      config.resolve.alias['assets'] = path.resolve(__dirname, 'assets');
-      config.resolve.alias['components'] = path.join(this.options.rootDir, 'components');
+      shared.map(item => {
+        config.resolve.alias[item] = path.resolve(__dirname, item);
+      });
 
       if (ctx.isClient) {
         config.module.rules.push({

@@ -1,4 +1,14 @@
 const path = require('path')
+const root = '../..'
+const shared = [
+  'assets',
+  'components',
+  'layout',
+  'middleware',
+  'plugins',
+  'static',
+  'store'
+]
 
 module.exports = {
   /*
@@ -25,13 +35,13 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    { src: '../../assets/scss/style.scss', lang: 'scss' }
+    { src: `${root}/assets/scss/style.scss`, lang: 'scss' }
   ],
   /*
   ** Global Plugin
   */
   plugins: [
-    { src: '../../plugins/vuex.js', ssr: false }
+    { src: `${root}/plugins/vuex.js`, ssr: false }
   ],
   /*
   ** Global Module
@@ -48,8 +58,9 @@ module.exports = {
     ** Run ESLint on save
     */
     extend (config, ctx) {
-      config.resolve.alias['assets'] = path.resolve(__dirname, 'assets')
-      config.resolve.alias['components'] = path.join(this.options.rootDir, 'components')
+      shared.map(item => {
+        config.resolve.alias[item] = path.resolve(__dirname, item)
+      })
 
       if (ctx.isClient) {
         config.module.rules.push({
