@@ -1,4 +1,4 @@
-![Preview](preview.png)
+![Preview](demo.jpg)
 
 # Nuxt Template
 
