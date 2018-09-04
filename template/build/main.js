@@ -294,7 +294,7 @@ const router = __WEBPACK_IMPORTED_MODULE_0_express_lib_router_index___default()(
  */
 router.get('/', async (req, res) => {
   res.json({
-    message: 'Hello World!'
+    message: 'Hello from API!'
   });
 });
 

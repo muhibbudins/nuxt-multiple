@@ -1,7 +1,12 @@
-export const state = () => ({
-  message: 'Hello World!'
+const state = () => ({
+  message: 'Hello from Vuex!'
 })
 
-export const mutations = {
+const mutations = {
   // Some Vuex mutations here
+}
+
+export default {
+  state,
+  mutations
 }
