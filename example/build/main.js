@@ -62,7 +62,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -73,106 +73,24 @@ module.exports = require("express");
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(2);
-
-
-/***/ }),
-/* 2 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_express__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_express___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_express__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_nuxt__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_nuxt___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_nuxt__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_body_parser__ = __webpack_require__(4);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_body_parser___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_body_parser__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__api__ = __webpack_require__(5);
-
-
-
-
-/**
- * Import any Routes on API folder
- */
-
-
-const app = __WEBPACK_IMPORTED_MODULE_0_express___default()();
-const host = process.env.HOST || '127.0.0.1';
-const port = process.env.PORT || 3050;
-
-/**
- * Set port
- */
-app.set('port', port);
-
-/**
- * Use body parser for handling POST method
- */
-app.use(__WEBPACK_IMPORTED_MODULE_2_body_parser___default.a.json());
-
-/**
- * Use given APIs
- */
-app.use('/api', __WEBPACK_IMPORTED_MODULE_3__api__["a" /* default */]);
-
-/**
- * Import and use Nuxt.js configuration
- */
-let config = __webpack_require__(8);
-config.dev = !("development" === 'production');
-
-/**
- * Create new instance of Nuxt
- */
-const nuxt = new __WEBPACK_IMPORTED_MODULE_1_nuxt__["Nuxt"](config);
-
-/**
- * Set build only on development mode
- */
-if (config.dev) {
-  const builder = new __WEBPACK_IMPORTED_MODULE_1_nuxt__["Builder"](nuxt);
-  builder.build();
-}
-
-/**
- * Use Nuxt renderer on Express
- */
-app.use(nuxt.render);
-
-/**
- * Start App
- */
-app.listen(port, host);
-
-/**
- * Show listen port
- */
-console.log(`Server listening on ${host}:${port}`);
-
-/***/ }),
-/* 3 */
 /***/ (function(module, exports) {
 
 module.exports = require("nuxt");
 
 /***/ }),
-/* 4 */
+/* 2 */
 /***/ (function(module, exports) {
 
 module.exports = require("body-parser");
 
 /***/ }),
-/* 5 */
+/* 3 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_express__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_express___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_express__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__hello__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__hello__ = __webpack_require__(7);
 
 
 /**
@@ -193,57 +111,7 @@ router.use(__WEBPACK_IMPORTED_MODULE_1__hello__["a" /* default */]);
 /* harmony default export */ __webpack_exports__["a"] = (router);
 
 /***/ }),
-/* 6 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_express_lib_router_index__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_express_lib_router_index___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_express_lib_router_index__);
-
-
-const router = __WEBPACK_IMPORTED_MODULE_0_express_lib_router_index___default()();
-
-/**
- * Create root endpoint
- */
-router.get('/', async (req, res) => {
-  res.json({
-    message: 'Hello World!'
-  });
-});
-
-/* harmony default export */ __webpack_exports__["a"] = (router);
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports) {
-
-module.exports = require("express/lib/router/index");
-
-/***/ }),
-/* 8 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(__dirname) {const config = __webpack_require__(11);
-const extend = {
-  srcDir: __dirname,
-  buildDir: '.nuxt/blog'
-};
-
-Object.assign(extend, config);
-
-module.exports = extend;
-/* WEBPACK VAR INJECTION */}.call(exports, "app/blog"))
-
-/***/ }),
-/* 9 */,
-/* 10 */
-/***/ (function(module, exports) {
-
-module.exports = require("path");
-
-/***/ }),
-/* 11 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(__dirname) {const path = __webpack_require__(10);
@@ -325,6 +193,228 @@ const changeLoaderOptions = loaders => {
   }
 };
 /* WEBPACK VAR INJECTION */}.call(exports, ""))
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(6);
+module.exports = __webpack_require__(11);
+
+
+/***/ }),
+/* 6 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_express__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_express___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_express__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_nuxt__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_nuxt___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_nuxt__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_body_parser__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_body_parser___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_body_parser__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__api__ = __webpack_require__(3);
+
+
+
+
+/**
+ * Import any Routes on API folder
+ */
+
+
+const app = __WEBPACK_IMPORTED_MODULE_0_express___default()();
+const host = process.env.HOST || '127.0.0.1';
+const port = process.env.PORT || 3050;
+
+/**
+ * Set port
+ */
+app.set('port', port);
+
+/**
+ * Use body parser for handling POST method
+ */
+app.use(__WEBPACK_IMPORTED_MODULE_2_body_parser___default.a.json());
+
+/**
+ * Use given APIs
+ */
+app.use('/api', __WEBPACK_IMPORTED_MODULE_3__api__["a" /* default */]);
+
+/**
+ * Import and use Nuxt.js configuration
+ */
+let config = __webpack_require__(9);
+config.dev = !("development" === 'production');
+
+/**
+ * Create new instance of Nuxt
+ */
+const nuxt = new __WEBPACK_IMPORTED_MODULE_1_nuxt__["Nuxt"](config);
+
+/**
+ * Set build only on development mode
+ */
+if (config.dev) {
+  const builder = new __WEBPACK_IMPORTED_MODULE_1_nuxt__["Builder"](nuxt);
+  builder.build();
+}
+
+/**
+ * Use Nuxt renderer on Express
+ */
+app.use(nuxt.render);
+
+/**
+ * Start App
+ */
+app.listen(port, host);
+
+/**
+ * Show listen port
+ */
+console.log(`Server listening on ${host}:${port}`);
+
+/***/ }),
+/* 7 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_express_lib_router_index__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_express_lib_router_index___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_express_lib_router_index__);
+
+
+const router = __WEBPACK_IMPORTED_MODULE_0_express_lib_router_index___default()();
+
+/**
+ * Create root endpoint
+ */
+router.get('/', async (req, res) => {
+  res.json({
+    message: 'Hello World!'
+  });
+});
+
+/* harmony default export */ __webpack_exports__["a"] = (router);
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports) {
+
+module.exports = require("express/lib/router/index");
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(__dirname) {const config = __webpack_require__(4);
+const extend = {
+  srcDir: __dirname,
+  buildDir: '.nuxt/blog'
+};
+
+Object.assign(extend, config);
+
+module.exports = extend;
+/* WEBPACK VAR INJECTION */}.call(exports, "app/blog"))
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports) {
+
+module.exports = require("path");
+
+/***/ }),
+/* 11 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_express__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_express___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_express__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_nuxt__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_nuxt___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_nuxt__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_body_parser__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_body_parser___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_body_parser__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__api__ = __webpack_require__(3);
+
+
+
+
+/**
+ * Import any Routes on API folder
+ */
+
+
+const app = __WEBPACK_IMPORTED_MODULE_0_express___default()();
+const host = process.env.HOST || '127.0.0.1';
+const port = process.env.PORT || 3060;
+
+/**
+ * Set port
+ */
+app.set('port', port);
+
+/**
+ * Use body parser for handling POST method
+ */
+app.use(__WEBPACK_IMPORTED_MODULE_2_body_parser___default.a.json());
+
+/**
+ * Use given APIs
+ */
+app.use('/api', __WEBPACK_IMPORTED_MODULE_3__api__["a" /* default */]);
+
+/**
+ * Import and use Nuxt.js configuration
+ */
+let config = __webpack_require__(12);
+config.dev = !("development" === 'production');
+
+/**
+ * Create new instance of Nuxt
+ */
+const nuxt = new __WEBPACK_IMPORTED_MODULE_1_nuxt__["Nuxt"](config);
+
+/**
+ * Set build only on development mode
+ */
+if (config.dev) {
+  const builder = new __WEBPACK_IMPORTED_MODULE_1_nuxt__["Builder"](nuxt);
+  builder.build();
+}
+
+/**
+ * Use Nuxt renderer on Express
+ */
+app.use(nuxt.render);
+
+/**
+ * Start App
+ */
+app.listen(port, host);
+
+/**
+ * Show listen port
+ */
+console.log(`Server listening on ${host}:${port}`);
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(__dirname) {const config = __webpack_require__(4);
+const extend = {
+  srcDir: __dirname,
+  buildDir: '.nuxt/profile'
+};
+
+Object.assign(extend, config);
+
+module.exports = extend;
+/* WEBPACK VAR INJECTION */}.call(exports, "app/profile"))
 
 /***/ })
 /******/ ]);
