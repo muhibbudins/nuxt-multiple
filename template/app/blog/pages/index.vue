@@ -9,7 +9,7 @@
     </div>
     <div>Response from <b>/api</b>:</div>
     <div v-html="message"></div>
-    <div>{{ state.message }}</div>
+    <div v-html="state.message"></div>
     <br>
     <a href="http://localhost:3060" class="el-button el-button--primary">Admin Page</a>
     <a href="https://github.com/muhibbudins/nuxt-multiple" target="_blank" rel="noopener" class="el-button">Github</a>

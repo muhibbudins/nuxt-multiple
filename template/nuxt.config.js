@@ -14,7 +14,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: '{{ slugify name }}',
+    title: '{{ name }}',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },

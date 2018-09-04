@@ -2,9 +2,6 @@ module.exports = {
   helpers: {
     escape: function(value) {
       return value.replace(/'/g, '&apos;');
-    },
-    slugify: function(string) {
-      return string.toLowerCase().replace(/ /g, '-')
     }
   },
   prompts: {
