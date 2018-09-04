@@ -2,7 +2,7 @@
   <b-container class="main text-center">
     <app-logo/>
     <h1 class="title">
-      nuxt-multiple-app
+      Blog
     </h1>
     <h2 class="subtitle">
       A Nuxt.js project — <span v-html="message"></span>
@@ -16,7 +16,7 @@
 
 <script>
 import axios from 'axios'
-import logo from '~/components/AppLogo.vue'
+import logo from '../../../components/AppLogo.vue'
 
 export default {
   components: {

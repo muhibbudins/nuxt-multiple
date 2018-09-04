@@ -1,4 +1,6 @@
 module.exports = {
+  srcDir: __dirname,
+  buildDir: '.nuxt/admin',
   /*
   ** Headers of the page
   */
@@ -23,13 +25,13 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    { src: '~/assets/scss/style.scss', lang: 'scss' }
+    { src: '../../assets/scss/style.scss', lang: 'scss' }
   ],
   /*
   ** Global Plugin
   */
   plugins: [
-    { src: '~/plugins/vuex.js', ssr: false }
+    { src: '../../plugins/vuex.js', ssr: false }
   ],
   /*
   ** Global Module

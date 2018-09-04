@@ -5,11 +5,11 @@ import bodyParser from 'body-parser'
 /**
  * Import any Routes on API folder
  */
-import api from './api'
+import api from '../../api'
 
 const app = express()
 const host = process.env.HOST || '127.0.0.1'
-const port = process.env.PORT || {{ port }}
+const port = process.env.PORT || 3060
 
 /**
  * Set port
@@ -29,7 +29,7 @@ app.use('/api', api)
 /**
  * Import and use Nuxt.js configuration
  */
-let config = require('../nuxt.config.js')
+let config = require('./nuxt.config.js')
 config.dev = !(process.env.NODE_ENV === 'production')
 
 /**
