@@ -1,6 +1,6 @@
+const path = require('path')
+
 module.exports = {
-  srcDir: __dirname,
-  buildDir: '.nuxt/admin',
   /*
   ** Headers of the page
   */
@@ -48,6 +48,9 @@ module.exports = {
     ** Run ESLint on save
     */
     extend (config, ctx) {
+      config.resolve.alias['assets'] = path.resolve(__dirname, 'assets')
+      config.resolve.alias['components'] = path.join(this.options.rootDir, 'components')
+
       if (ctx.isClient) {
         config.module.rules.push({
           enforce: 'pre',

@@ -62,7 +62,7 @@ module.exports =
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -73,64 +73,24 @@ module.exports = require("express");
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = require("nuxt");
+module.exports = __webpack_require__(2);
+
 
 /***/ }),
 /* 2 */
-/***/ (function(module, exports) {
-
-module.exports = require("body-parser");
-
-/***/ }),
-/* 3 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_express__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_express___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_express__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__hello__ = __webpack_require__(6);
-
-
-/**
- * Import any routes
- */
-
-
-/**
- * Create new Instance of Router
- */
-const router = Object(__WEBPACK_IMPORTED_MODULE_0_express__["Router"])();
-
-/**
- * User routes here
- */
-router.use(__WEBPACK_IMPORTED_MODULE_1__hello__["a" /* default */]);
-
-/* harmony default export */ __webpack_exports__["a"] = (router);
-
-/***/ }),
-/* 4 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(5);
-module.exports = __webpack_require__(9);
-
-
-/***/ }),
-/* 5 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_express__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_express___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_express__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_nuxt__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_nuxt__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_nuxt___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_nuxt__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_body_parser__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_body_parser__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_body_parser___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_body_parser__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__api__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__api__ = __webpack_require__(5);
 
 
 
@@ -142,7 +102,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 const app = __WEBPACK_IMPORTED_MODULE_0_express___default()();
 const host = process.env.HOST || '127.0.0.1';
-const port = process.env.PORT || 3060;
+const port = process.env.PORT || 3050;
 
 /**
  * Set port
@@ -194,6 +154,45 @@ app.listen(port, host);
 console.log(`Server listening on ${host}:${port}`);
 
 /***/ }),
+/* 3 */
+/***/ (function(module, exports) {
+
+module.exports = require("nuxt");
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports) {
+
+module.exports = require("body-parser");
+
+/***/ }),
+/* 5 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_express__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_express___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_express__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__hello__ = __webpack_require__(6);
+
+
+/**
+ * Import any routes
+ */
+
+
+/**
+ * Create new Instance of Router
+ */
+const router = Object(__WEBPACK_IMPORTED_MODULE_0_express__["Router"])();
+
+/**
+ * User routes here
+ */
+router.use(__WEBPACK_IMPORTED_MODULE_1__hello__["a" /* default */]);
+
+/* harmony default export */ __webpack_exports__["a"] = (router);
+
+/***/ }),
 /* 6 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -223,164 +222,33 @@ module.exports = require("express/lib/router/index");
 
 /***/ }),
 /* 8 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(__dirname) {module.exports = {
+/* WEBPACK VAR INJECTION */(function(__dirname) {const config = __webpack_require__(11);
+const extend = {
   srcDir: __dirname,
-  buildDir: '.nuxt/admin',
-  /*
-  ** Headers of the page
-  */
-  head: {
-    title: 'nuxt-multiple-app',
-    meta: [{ charset: 'utf-8' }, { name: 'viewport', content: 'width=device-width, initial-scale=1' }, { hid: 'description', name: 'description', content: '{{escape description }}' }],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
-  },
-  /*
-  ** Customize the progress bar color
-  */
-  loading: {
-    color: '#3B8070'
-  },
-  /*
-  ** Global CSS
-  */
-  css: [{ src: '../../assets/scss/style.scss', lang: 'scss' }],
-  /*
-  ** Global Plugin
-  */
-  plugins: [{ src: '../../plugins/vuex.js', ssr: false }],
-  /*
-  ** Global Module
-  */
-  modules: ['bootstrap-vue/nuxt'],
-  /*
-  ** Build configuration
-  */
-  build: {
-    extractCSS: true,
-    /*
-    ** Run ESLint on save
-    */
-    extend(config, ctx) {
-      if (ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        });
-
-        const vueLoader = config.module.rules.find(({ loader }) => loader === 'vue-loader');
-        const { options: { loaders } } = vueLoader || { options: {} };
-
-        if (loaders) {
-          for (const loader of Object.values(loaders)) {
-            changeLoaderOptions(Array.isArray(loader) ? loader : [loader]);
-          }
-        }
-
-        config.module.rules.forEach(rule => changeLoaderOptions(rule.use));
-      }
-    }
-  }
+  buildDir: '.nuxt/blog'
 };
 
-const changeLoaderOptions = loaders => {
-  if (loaders) {
-    for (const loader of loaders) {
-      if (loader.loader === 'sass-loader') {
-        Object.assign(loader.options, {
-          includePaths: ['./assets']
-        });
-      }
-    }
-  }
-};
-/* WEBPACK VAR INJECTION */}.call(exports, "app/admin"))
+Object.assign(extend, config);
+
+module.exports = extend;
+/* WEBPACK VAR INJECTION */}.call(exports, "app/blog"))
 
 /***/ }),
-/* 9 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_express__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_express___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_express__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_nuxt__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_nuxt___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_nuxt__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_body_parser__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_body_parser___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_body_parser__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__api__ = __webpack_require__(3);
-
-
-
-
-/**
- * Import any Routes on API folder
- */
-
-
-const app = __WEBPACK_IMPORTED_MODULE_0_express___default()();
-const host = process.env.HOST || '127.0.0.1';
-const port = process.env.PORT || 3050;
-
-/**
- * Set port
- */
-app.set('port', port);
-
-/**
- * Use body parser for handling POST method
- */
-app.use(__WEBPACK_IMPORTED_MODULE_2_body_parser___default.a.json());
-
-/**
- * Use given APIs
- */
-app.use('/api', __WEBPACK_IMPORTED_MODULE_3__api__["a" /* default */]);
-
-/**
- * Import and use Nuxt.js configuration
- */
-let config = __webpack_require__(10);
-config.dev = !("development" === 'production');
-
-/**
- * Create new instance of Nuxt
- */
-const nuxt = new __WEBPACK_IMPORTED_MODULE_1_nuxt__["Nuxt"](config);
-
-/**
- * Set build only on development mode
- */
-if (config.dev) {
-  const builder = new __WEBPACK_IMPORTED_MODULE_1_nuxt__["Builder"](nuxt);
-  builder.build();
-}
-
-/**
- * Use Nuxt renderer on Express
- */
-app.use(nuxt.render);
-
-/**
- * Start App
- */
-app.listen(port, host);
-
-/**
- * Show listen port
- */
-console.log(`Server listening on ${host}:${port}`);
-
-/***/ }),
+/* 9 */,
 /* 10 */
 /***/ (function(module, exports) {
 
-/* WEBPACK VAR INJECTION */(function(__dirname) {module.exports = {
-  srcDir: __dirname,
-  buildDir: '.nuxt/blog',
+module.exports = require("path");
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(__dirname) {const path = __webpack_require__(10);
+
+module.exports = {
   /*
   ** Headers of the page
   */
@@ -416,6 +284,9 @@ console.log(`Server listening on ${host}:${port}`);
     ** Run ESLint on save
     */
     extend(config, ctx) {
+      config.resolve.alias['assets'] = path.resolve(__dirname, 'assets');
+      config.resolve.alias['components'] = path.join(this.options.rootDir, 'components');
+
       if (ctx.isClient) {
         config.module.rules.push({
           enforce: 'pre',
@@ -450,7 +321,7 @@ const changeLoaderOptions = loaders => {
     }
   }
 };
-/* WEBPACK VAR INJECTION */}.call(exports, "app/blog"))
+/* WEBPACK VAR INJECTION */}.call(exports, ""))
 
 /***/ })
 /******/ ]);

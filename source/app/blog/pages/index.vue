@@ -16,7 +16,7 @@
 
 <script>
 import axios from 'axios'
-import logo from '../../../components/AppLogo.vue'
+import logo from 'components/AppLogo.vue'
 
 export default {
   components: {
