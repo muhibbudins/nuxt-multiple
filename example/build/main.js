@@ -319,7 +319,7 @@ const extend = {
   /**
    * Define build target
    */
-  buildDir: '.nuxt/admin'
+  buildDir: '.nuxt/blog'
 
   /**
    * Export config
@@ -421,7 +421,7 @@ const extend = {
   /**
    * Define build target
    */
-  buildDir: '.nuxt/profile'
+  buildDir: '.nuxt/admin'
 
   /**
    * Export config
