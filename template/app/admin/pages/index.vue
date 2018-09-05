@@ -13,6 +13,11 @@
     <br>
     <a href="http://localhost:3050" class="el-button el-button--primary">Blog Page</a>
     <a href="https://github.com/muhibbudins/nuxt-multiple" target="_blank" rel="noopener" class="el-button">Github</a>
+    <br>
+    <br>
+    <div>Load an Image</div>
+    <br>
+    <img src="~static/example.jpg" alt="Example Image">
   </section>
 </template>
 

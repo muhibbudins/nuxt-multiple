@@ -1,4 +1,6 @@
-const config = require('../../nuxt.config.js')
+const merge = require('deepmerge')
+const nuxt = require('../../nuxt.config.js')
+
 const extend = {
   /**
    * Define source directory
@@ -13,4 +15,5 @@ const extend = {
 /**
  * Export config
  */
-module.exports = Object.assign(extend, config)
+
+module.exports = merge(nuxt, extend)

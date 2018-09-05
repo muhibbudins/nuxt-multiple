@@ -1,4 +1,6 @@
-const config = require('../../nuxt.config.js')
+const merge = require('deepmerge')
+const nuxt = require('../../nuxt.config.js')
+
 const extend = {
   /**
    * Define source directory
@@ -7,10 +9,18 @@ const extend = {
   /**
    * Define build target
    */
-  buildDir: '.nuxt/admin'
+  buildDir: '.nuxt/admin',
+
+  /**
+   * Custom head title
+   */
+  head: {
+    title: 'Admin Page'
+  }
 }
 
 /**
  * Export config
  */
-module.exports = Object.assign(extend, config)
+
+module.exports = merge(nuxt, extend)
