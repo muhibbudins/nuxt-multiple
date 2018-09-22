@@ -43,7 +43,9 @@ module.exports = {
   ** Global Plugin
   */
   plugins: [
-    '../../plugins/element.js'
+    '../../plugins/element.js',
+    '../../plugins/vuex.js',
+    '../../store/index.js'
   ],
   /*
   ** Global Module
